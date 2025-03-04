@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    text-decoration: none;
+
 }
 
 :root {
@@ -277,10 +279,10 @@ header {
 .programas-container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin: 25px;
     padding: 10px;
     width: 100%;
-    max-width: fit-content;
 }
 
 .programas-wraper {
@@ -309,6 +311,64 @@ header {
     border-radius: 5px;
     font-size: 1em;
     width: 65%;
+}
+
+.nosotros {
+    padding: 20px 10px;
+    background-color: var(--quinary-color);
+    align-items: center;
+}
+
+.nosotros h2 {
+    text-align: flex-start;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: var(--senary-color);
+}
+
+.nosotros-wrapper {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: fit-content;
+    max-height: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.nosotros-left,
+.nosotros-right {
+    flex: 1;
+    padding: 10px;
+    max-height: 75%;
+    margin: 15px;
+}
+
+
+.nosotros-carrousel {
+    max-width: 100%;
+    height: 100%;
+}
+
+.nosotros-carrousel img {
+    width: 100%;
+    max-width: 100%;
+
+    max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nosotros-right p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--senary-color);
+    margin-top: 20px;
+    text-align: center;
+    align-self: center;
+    align-content: center;
 }
 
 
