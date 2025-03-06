@@ -47,30 +47,24 @@ body {
 
 header {
     background-color: var(--quaternary-color);
-    padding-top: 0;
     padding: 0;
-    margin-top: 0;
+    margin: 0;
     position: fixed;    
     width: 100%;
     height: auto;
     z-index: 1000;
     display: flex;
     flex-direction: row;
-    overflow: visible;
 }
 
 .logo {
     display: flex;
-    flex: 1;
-    height: 10vh;
-    max-height: 10vh;
-    width: 35%;
-    max-width: 35%;
+    flex:1;
 }
 
 .logo img {
-    width: 50%;
-    height: 50%;
+    width: 150px;
+    height: 170px;
 }
 
 .burger-menu {
@@ -80,12 +74,11 @@ header {
 .navBar {
     background-color: var(--quaternary-color);
     padding: 0;
-    margin: 0;
-    margin-left: auto;
-    margin-right: 15px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -94,10 +87,13 @@ header {
     flex-direction: row;
     justify-content: flex-end;
     align-content: flex-end;
+    width: 100% ;
+    margin: 0;
+    padding: 0;
 }
 
 .navListItems {
-    margin: 15px;
+    margin: 0 15px;
     padding: 15px;
     list-style-type: none;
 }
@@ -154,8 +150,7 @@ header {
     background-color: var(--secondary-color);
     color: #fff;
     padding: 50px;
-    margin: 0; 
-    height: fit-content;
+    width: 100%;
 }
 
 
@@ -215,6 +210,10 @@ header {
 
 .experiencias {
     background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
 .experiencias h2 {
@@ -233,18 +232,26 @@ header {
     padding: 10px;
 }
 
-.experiencias-img,
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999; 
+    display: none; 
+}
+
+.experiencias-column,
 .experiencias-galery,
 .experiencias-text {
     flex: 1; 
     padding: 10px;
 }
 
-.experiencias-img {
-    text-align: center;
-}
 
-.experiencias-img img {
+.experiencias-column img {
     width: 100%;
     max-width: 600px;
     height: 100%;
@@ -259,15 +266,30 @@ header {
     gap: 15px;
 }
 
-.experiencias-galery img {
+.experiencias-item {
     width: 100%;
-    max-width: 400px;
+    /*max-width: 400px;*/
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(177, 167, 167, 0.1);
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
+
+.zoomed {
+    transform: translate(-50%, -50%) scale(1.1);
+    position: fixed;
+    z-index: 1000;
+    max-width: 65vw;
+    top: 50%;
+    left: 50%;
+    max-height: 65vh;
+    background-blend-mode: darken;
+
+}
+
 
 .experiencias-text {
     display: flex;
@@ -341,6 +363,8 @@ header {
 
 .programas {
     background-color: var(--secondary-color);
+    width: 100vw;
+    overflow-x : hidden;
 }
 
 .programas h2 {
@@ -395,22 +419,23 @@ header {
 
 .nosotros {
     width: 100%;
-    height: 100vh; /* Ocupa el 100% de la pantalla */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-color: var(--quinary-color);
 }
 
-/* Título alineado a la izquierda */
+
 .nosotros h2 {
     width: 100%;
     text-align: left;
     margin-bottom: 20px;
+    color: #333;
 }
 
-/* Contenedor flexible */
 .nosotros-container {
     width: 100%;
     height: 80%;
@@ -418,7 +443,6 @@ header {
     gap: 20px;
 }
 
-/* Carrusel y texto ocupan 50% cada uno */
 .nosotros-carrousel,
 .nosotros-text {
     flex: 1;
@@ -427,7 +451,7 @@ header {
     justify-content: center;
 }
 
-/* Carrusel */
+
 .nosotros-carrousel {
     position: relative;
     overflow: hidden;
@@ -447,9 +471,9 @@ header {
     height: 100%;
     object-fit: cover;
     flex: 0 0 100%;
+    border-radius: 1.2rem;
 }
 
-/* Botones de navegación */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -471,13 +495,22 @@ header {
     right: 10px;
 }
 
-/* Texto */
 .nosotros-text {
     display: flex;
     align-items: center;
     text-align: justify;
     padding: 20px;
 }
+
+.nosotros-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+    align-content: center;
+}
+
 .contacto{
     background-color: var(--quaternary-color);
     padding: 20px 10px;
