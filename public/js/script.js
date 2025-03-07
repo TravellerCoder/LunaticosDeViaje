@@ -63,3 +63,26 @@ spanProgram.addEventListener('click', (event) => {
     event.stopPropagation();
     spanProgramText.style.display = 'none';
 });
+
+
+/*--------------- toogle navbar ---------------*/
+
+
+let menuIcon = document.querySelector('#menu-icon');
+let navBar = document.querySelector('.navBar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navBar.classList.toggle('active');
+}
+
+
+    /*--------------- remover el toggle del icon y navbar cuando hace click en el navbar link ---------------*/
+
+    navLinks.forEach(link => {
+        link.onclick = () => {
+            menuIcon.classList.remove('bx-x');
+            navBar.classList.remove('active');
+        }
+    });
+
