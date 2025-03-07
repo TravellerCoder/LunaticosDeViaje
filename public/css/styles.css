@@ -32,7 +32,7 @@ h1, h2, h3 {
     font-weight: 400;
 }
 
-p {
+p, span, a{
     font-family: 'Nourd';
     font-weight: 300;
 }
@@ -44,6 +44,27 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
+body::-webkit-scrollbar {
+    width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--quinary-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 3px solid var(--secondary-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color);
+    border: 3px solid var(--secondary-color);
+}
+
 
 header {
     background-color: var(--quaternary-color);
@@ -375,6 +396,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .opiniones-text p {
@@ -384,6 +406,8 @@ header {
     margin-top: 30px;
     text-align: center;
     align-content: center;
+    max-height:100% ;
+    overflow: hidden;
 }
 
 .programas {
@@ -414,28 +438,47 @@ header {
 
 }
 
-.programas-wraper {
+.programas-wraper1,
+.programas-wraper2,
+.programas-wraper3 {
     flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 10px;
     border: solid 3px var(--senary-color);
     border-radius: 10px;
     margin: 10px 50px;
     background-color: var(--primary-color);
+    transition: all 0.7 ease; 
+    cursor: pointer;
 }
 
-.programas-wraper h3 {
+.programas-wraper1,
+.programas-wraper2,
+.programas-wraper3  h3 {
     text-align: center;
     color: var(--senary-color);
     font-size: 2em;
-    margin: 10px;
-    padding: 10px;    
+    margin: 10px;    
 }
 
-.programas-wraper hr{
+.programas-descript{
+    display: none;
+    text-align: center;
+    color: var(--senary-color);
+    font-size: 1.5em;
+}
+
+.programas-wraper1 hr,
+.programas-wraper2 hr,
+.programas-wraper3  hr{
     z-index: -1;
 } 
 
-.programas-wraper button {
+.programas-wraper1 button,
+.programas-wraper2 button,
+.programas-wraper3  button {
     background-color: var(--tertiary-color);
     color: var(--senary-color);
     border: none;
@@ -444,6 +487,13 @@ header {
     border-radius: 5px;
     font-size: 1em;
     width: 65%;
+}
+
+.programas-wraper1 button a,
+.programas-wraper2 button a,
+.programas-wraper3  button a{
+    color: var(--senary-color);
+    text-decoration: none;
 }
 
 .nosotros {
@@ -625,6 +675,43 @@ footer h2 {
     color: var(--senary-color);
 }
 
+
+@media (max-width: 998px) {
+
+    .experiencias-container {
+        display: grid;
+        grid-template-areas: 
+        "experiencias-column  experiencias-galery"
+        "experiencias-text  experiencias-text ";
+    }
+
+    .experiencias-text {
+        grid-area: experiencias-text;
+    }
+
+    .programas-container {
+        display: grid;
+        grid-template-areas: 
+        "programas-wraper1  programas-wraper2"
+        "programas-wraper3  programas-wraper3";
+    }
+
+    .programas-wraper1 {
+        grid-area: programas-wraper1;
+        width: 100%;
+
+    }
+
+    .programas-wraper3 {
+        grid-area: programas-wraper3;
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+
+}
 
 
 

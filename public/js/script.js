@@ -4,6 +4,8 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const images = document.querySelectorAll(".experiencias-item");
 const overlay = document.querySelector('.overlay');
+const spanProgram = document.querySelector('.programas-wraper');
+const spanProgramText = document.querySelector('.programas-descript');
 
 let index = 0;
 const totalImages = imagesCarrousel.length;
@@ -45,3 +47,15 @@ images.forEach(image => {
     });
 });
 
+
+spanProgram.addEventListener('click', (event) => {
+    console.log('click');
+    console.log(spanProgramText);
+    event.stopPropagation();
+    spanProgramText.style.display = 'block';
+});
+
+spanProgram.addEventListener('click', (event) => {
+    event.stopPropagation();
+    spanProgramText.style.display = 'none';
+});
