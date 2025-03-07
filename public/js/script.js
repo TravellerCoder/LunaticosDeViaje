@@ -6,6 +6,7 @@ const images = document.querySelectorAll(".experiencias-item");
 const overlay = document.querySelector('.overlay');
 const spanProgram = document.querySelector('.programas-wraper');
 const spanProgramText = document.querySelector('.programas-descript');
+const xButton = document.querySelectorAll('x-button');
 
 let index = 0;
 const totalImages = imagesCarrousel.length;
@@ -38,12 +39,14 @@ images.forEach(image => {
         images.forEach (image => image.classList.remove('zoomed')); 
         image.classList.toggle('zoomed')
         overlay.style.display = 'block';
+        xButton.style.display = 'block';
         
     })
 
     document.addEventListener('click', () => {
         image.classList.remove('zoomed');
         overlay.style.display = 'none';
+        xButton.style.display = 'none';
     });
 });
 
@@ -53,6 +56,7 @@ spanProgram.addEventListener('click', (event) => {
     console.log(spanProgramText);
     event.stopPropagation();
     spanProgramText.style.display = 'block';
+
 });
 
 spanProgram.addEventListener('click', (event) => {

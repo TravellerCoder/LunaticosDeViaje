@@ -296,7 +296,7 @@ header {
     box-shadow: 0 4px 8px rgba(177, 167, 167, 0.1);
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.7s ease-in-out;
 }
 
 .zoomed {
@@ -308,7 +308,20 @@ header {
     left: 50%;
     max-height: 65vh;
     background-blend-mode: darken;
+}
 
+.x-button{
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    background-color: var(--tertiary-color);
+    color: var(--senary-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 10100;
 }
 
 
