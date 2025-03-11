@@ -29,9 +29,11 @@
 h1, h2, h3 {
     font-family: 'Bobby Jones';
     font-weight: 400;
+    color: #333;
 }
 
 p, span, a{
+    color:#333;
     font-family: 'Nourd';
     font-weight: 300;
 }
@@ -39,7 +41,7 @@ p, span, a{
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
 }
@@ -184,7 +186,6 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--background-color);
-    color: #333;
     padding: 10px;
     width: 100%;
 }
@@ -213,8 +214,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    color: #fff;
     padding: 20px;
     margin: 0;
     height: fit-content;
@@ -252,7 +251,6 @@ header {
 }
 
 .experiencias {
-    background-color: var(--primary-color);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -261,7 +259,6 @@ header {
 
 .experiencias h2 {
     text-align: left;
-    color: var(--senary-color);
     font-size: 2.5em;
     margin: 2rem;
     padding: 1rem;    
@@ -372,35 +369,24 @@ header {
 .experiencias-text p {
     font-size: 1.6rem;
     line-height: 1.5;
-    color: var(--senary-color);
     margin-top: 30px;
     text-align: center;
     align-content: center;
 }
 
-.viajes-personalizados {
-    background-color: var(--quaternary-color);
-}
 
 .viajes-personalizados h2 {
     text-align: left;
-    color: #333;
     font-size: 2.5em;
     margin: 10px;
     padding: 10px;    
 }
 
-.viajes-personalizados p {
-    color: #333;   
-}
 
-.opiniones {
-    background-color: var(--primary-color);
-}
 
 .opiniones h2 {
     text-align: left;
-    color: var(--senary-color);
+    color: #333;
     font-size: 2.5em;
     margin: 10px;
     padding: 10px;    
@@ -437,7 +423,6 @@ header {
 .opiniones-text p {
     font-size: 1.6rem;
     line-height: 1.5;
-    color: var(--senary-color);
     margin-top: 30px;
     text-align: center;
     align-content: center;
@@ -446,7 +431,6 @@ header {
 }
 
 .programas {
-    background-color: var(--secondary-color);
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -457,7 +441,6 @@ header {
 
 .programas h2 {
     text-align: left;
-    color: var(--senary-color);
     font-size: 2.5em;
     margin: 10px;
     padding: 10px;    
@@ -479,17 +462,16 @@ header {
     flex-direction: column;
     justify-content: center;
     padding: 10px;
-    border: solid 3px var(--senary-color);
+    border: solid 3px var(--secondary-color);
     border-radius: 10px;
     margin: 10px 50px;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     transition: all 0.7 ease; 
     cursor: pointer;
 }
 
 .programas-wraper h3 {
     text-align: center;
-    color: var(--senary-color);
     font-size: 2em;
     margin: 10px;    
 }
@@ -529,7 +511,6 @@ header {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: var(--quinary-color);
 }
 
 
@@ -537,7 +518,6 @@ header {
     width: 100%;
     text-align: left;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .nosotros-container {
@@ -616,7 +596,6 @@ header {
 }
 
 .contacto{
-    background-color: var(--quaternary-color);
     padding: 20px 10px;
     align-items: center;
 }
@@ -625,7 +604,6 @@ header {
     text-align: flex-start;
     margin-bottom: 30px;
     font-size: 2.5em;
-    color: var(--senary-color);
 }
 
 .contact-wrapper {
@@ -692,7 +670,6 @@ header {
 }
 
 footer {
-    background-color: var(--primary-color);
     padding: 20px 10px;
     align-items: center;
 }
@@ -701,7 +678,6 @@ footer h2 {
     text-align: flex-start;
     margin-bottom: 30px;
     font-size: 2.5em;
-    color: var(--senary-color);
 }
 
 footer .social-media {
@@ -718,13 +694,12 @@ footer .social-media {
 .social-media a i {
     font-size: 35px;
     margin: 35px;
-    color: #4f5902;
+    color: #333;
 }
 
 footer p {
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--senary-color);
     margin-top: 20px;
     margin-bottom: 5px;
     text-align: center;
@@ -732,7 +707,7 @@ footer p {
 }
 
 footer p a {
-    color: var(--senary-color);
+    color: var(--quaternary-color);
     text-decoration: none;
 }
 
