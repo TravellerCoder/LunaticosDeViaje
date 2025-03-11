@@ -14,6 +14,7 @@
     --quaternary-color: #a0a603;
     --quinary-color: #a68953;
     --senary-color: #f2f2f2;
+    --scrollbarTrack-color: #636060;
 }
 
 @font-face {
@@ -48,11 +49,11 @@ body {
 
 
 body::-webkit-scrollbar {
-    width: 16px;
+    width: 13px;
 }
 
 body::-webkit-scrollbar-track {
-    background: var(--quinary-color);
+    background: var(--scrollbarTrack-color);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -231,10 +232,12 @@ header {
     background-color: var(--secondary-color);
     border: none;
     padding: 15px;
-    margin: 15px;
+    margin: 15px auto;
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
+    width: 40%;
+
 }
 
 .hero-galery button:hover {
@@ -629,7 +632,8 @@ header {
 .contact-left form {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
     align-items: center;
     width: 100%;
     max-width: 100%;
@@ -662,7 +666,8 @@ header {
 .contact-right img {
     width: 80%;
     max-width: 80%;
-    max-height: 800%;
+    max-height: 100%;
+    align-content: center
 }
 
 .contacto h3 {
