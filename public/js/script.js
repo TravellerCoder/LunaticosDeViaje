@@ -39,14 +39,14 @@ images.forEach(image => {
         images.forEach (image => image.classList.remove('zoomed')); 
         image.classList.toggle('zoomed')
         overlay.style.display = 'block';
-        xButton.style.display = 'block';
+        xButton.forEach(button => button.style.display = 'block');
         
     })
 
     document.addEventListener('click', () => {
         image.classList.remove('zoomed');
         overlay.style.display = 'none';
-        xButton.style.display = 'none';
+        xButton.forEach(button => button.style.display = 'none');
     });
 });
 
@@ -65,24 +65,44 @@ spanProgram.addEventListener('click', (event) => {
 });
 
 
+
 /*--------------- toogle navbar ---------------*/
 
 
-let menuIcon = document.querySelector('#menu-icon');
-let navBar = document.querySelector('.navBar');
+let menuIcon = document.getElementById('menu-icon');
+let navList = document.getElementById('navList');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navBar.classList.toggle('active');
-}
+menuIcon.addEventListener('click', () => {
+    console.log('click');
+    
+    navList.classList.toggle('active');
+});
 
-
-    /*--------------- remover el toggle del icon y navbar cuando hace click en el navbar link ---------------*/
-
-    navLinks.forEach(link => {
-        link.onclick = () => {
-            menuIcon.classList.remove('bx-x');
-            navBar.classList.remove('active');
-        }
+document.querySelectorAll('.navListItems a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
     });
+});
 
+    /*--------------- clase active de navbar y scroll a section ---------------*/
+
+    let sections = document.querySelectorAll('section');
+    let navLinks = document.querySelectorAll('header nav a');
+    
+    window.onscroll = () => {
+        sections.forEach(sec => {
+            let top = window.scrollY;
+            let offset = sec.offsetTop - 120;
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
+    
+            console.log(`Section: ${id}, Offset: ${offset}, Height: ${height}`); // Verifica los valores de cada sección
+    
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach(links => {
+                    links.classList.remove('active');
+                    document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                });
+            }
+        });
+    };
