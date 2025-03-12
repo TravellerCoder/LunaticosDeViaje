@@ -458,7 +458,7 @@ header {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin: 25px;
+    margin: 10px;
     padding: 10px;
 }
 
@@ -482,8 +482,10 @@ header {
     height: 100%;
 }
 
-.opiniones-text span {
-    font-size: 1.6rem;
+.opiniones-text img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
 }
 
 .opiniones-text p {
@@ -515,37 +517,31 @@ header {
 }
 
 .programas-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 25px;
-    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 
 }
 
 .programas-wraper {
-    flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    border: solid 3px var(--background-color);
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
     border-radius: 10px;
-    margin: 10px 50px;
-    height: 75vh;
-    max-height: 75vh;
-    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    height: 100%; 
 }
 
 
+
 .programas-text {
-    position: absolute;
-    top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 10px;
 }
 
 .programas-text h3 {
@@ -579,14 +575,10 @@ header {
 }
 
 .programas-wraper img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 75%;
-    max-height: 75%;
+    width: 100%; /* La imagen ocupa el ancho completo del contenedor */
+    height: 60%;
+    margin-top: 15px;
+    border-radius: 5px;
 }
 
 
