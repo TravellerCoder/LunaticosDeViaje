@@ -337,9 +337,9 @@ header {
 
 .x-button{
     position: absolute;
-    top: 5rem;
+    top: 4.5rem;
     right: 2rem;
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
     color: var(--senary-color);
     border: none;
     padding: 10px;
@@ -359,7 +359,7 @@ header {
 
 .experiencias-download-pdf {
     margin-bottom: 15px;
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     color: white;
     width: 75%;
     margin:0 auto 25px auto;
@@ -370,6 +370,13 @@ header {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+}
+
+.experiencias-download-pdf:hover {
+    background-color: var(--secondary-color);
+    box-shadow: var(--primary-color);
+    transition: 0.7s;
+    color: var(--senary-color);
 }
 
 .experiencias-text p {
@@ -388,7 +395,10 @@ header {
     padding: 10px;    
 }
 
-
+.experiencias-download-pdf a {
+    color: var(--senary-color);
+    text-decoration: none;
+}
 
 .opiniones h2 {
     text-align: left;
