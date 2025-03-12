@@ -495,6 +495,9 @@ header {
     max-height:100%;
 }
 
+/*-----------programas ---------*/
+
+
 .programas {
     width: 100vw;
     display: flex;
@@ -527,36 +530,44 @@ header {
     flex-direction: column;
     justify-content: center;
     padding: 10px;
-    border: solid 3px var(--secondary-color);
+    border: solid 3px var(--background-color);
     border-radius: 10px;
     margin: 10px 50px;
-    background-color: var(--background-color);
-    transition: all 0.7 ease; 
-    cursor: pointer;
+    height: 75vh;
+    max-height: 75vh;
+    position: relative;
 }
 
-.programas-wraper h3 {
+
+.programas-text {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.programas-text h3 {
+    font-size: 2rem;
+    margin: 10px;
+    padding: 10px;
+}
+
+.descript{
+    display: flex;
     text-align: center;
-    font-size: 2em;
-    margin: 10px;    
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
 }
 
-.programas-descript{
-    display: none;
-    text-align: center;
-    font-size: 1.5em;
-}
-
-.programas-wraper hr{
-    z-index: -1;
-} 
-
-.programas-wraper  button {
+.programas-button {
     background-color: var(--button-color);
     color: var(--senary-color);
     border: none;
     padding: 10px;
-    margin: 10px auto;
+    margin: 15px auto;
     border-radius: 5px;
     font-size: 1em;
     width: 65%;
@@ -566,6 +577,21 @@ header {
     color: var(--senary-color);
     text-decoration: none;
 }
+
+.programas-wraper img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 75%;
+    max-height: 75%;
+}
+
+
+
+/*---------nosotros ----------*/
 
 .nosotros {
     width: 100%;
@@ -870,6 +896,14 @@ footer p a {
 
 @media (max-width: 768px) {
 
+        header {
+            background-color: var(--background-color);
+        }
+
+        .logo {
+            display: none;
+        }
+
 
         #menu-icon {
             display: block;
@@ -1031,14 +1065,15 @@ footer p a {
         }
 
         .programas-wraper {
-            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             margin: 10px;
+            height: 100%;
+            max-height: 100%;
         }
 
-        .programas-wraper h3 {
-            max-width: 80%;
-            font-size: 1.5rem;
-        }
 
         .programas-descript {
             font-size: .8rem;
