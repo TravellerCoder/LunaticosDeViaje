@@ -889,18 +889,18 @@ footer p a {
 @media (max-width: 768px) {
 
         header {
-            background-color: var(--background-color);
+            background-color: var(--button-color);
         }
 
         .logo {
-            display: none;
+            display: block;
         }
 
 
         #menu-icon {
             display: block;
             cursor: pointer;
-            color: #333;
+            color: var(--senary-color);
         }
 
         .navList{
