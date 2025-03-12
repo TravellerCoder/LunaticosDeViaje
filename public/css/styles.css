@@ -734,7 +734,8 @@ header {
     width: 80%;
     max-width: 80%;
     max-height: 100%;
-    align-content: center
+    display: flex;
+    align-content: center;
 }
 
 .contacto h3 {
@@ -802,25 +803,43 @@ footer p a {
         margin-bottom: 5px;
     }
 
-
-    .programas-container {
-        display: grid;
-        grid-template-areas: 
-        "programas-wraper  programas-wraper"
-        "programas-wraper  programas-wraper";
+    .opiniones-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    .programas-wraper1 {
-        grid-area: programas-wraper1;
+    .nosotros-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-left {
         width: 100%;
-
+        margin: auto;
     }
 
-    .programas-wraper3 {
-        grid-area: programas-wraper3;
+    .contact-left form {
+        width: 75%;
     }
 
-    
+    .contact-left form button {
+        margin: auto;
+    }
+
+    .contact-right img {
+        margin: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1020,7 +1039,17 @@ footer p a {
             margin: 0 auto;
             padding: 10px;
         }
+
+        .contact-left,
+        .contact-rigth {
+            width: 100%;
+        }
+
+        .contact-left form {
+            width: 75%;
+        }
+
+        .contact-rigth img {
+            width: 500px;
 }
-
-
-
+}
