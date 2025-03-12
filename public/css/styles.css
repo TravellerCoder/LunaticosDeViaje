@@ -663,8 +663,9 @@ header {
 
 .contacto h2 {
     text-align: flex-start;
-    margin-bottom: 30px;
     font-size: 2.5em;
+    margin: 2rem;
+    padding: 1rem;
 }
 
 .contact-wrapper {
@@ -687,12 +688,20 @@ header {
     margin: 50px;
 }
 
-.contact-left form {
+.contact-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-items: center;
+    padding: 10px;
+    max-height: 75%;
+    margin: 50px;
+}
+
+.contact-left form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
@@ -958,6 +967,9 @@ footer p a {
 
         .opiniones-text-desplegable {
             display: none;
+        }
+
+        .opiniones-text p {
             font-size: 1rem;
         }
 

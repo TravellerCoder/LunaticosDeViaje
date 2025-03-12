@@ -101,7 +101,8 @@ document.querySelectorAll('.navListItems a').forEach(link => {
 
     opinionSpan.addEventListener('click', (event) => {
         event.stopPropagation();
-        opinion.style.display = 'block';
+        const isOpinionVisible = opinion.style.display === 'block';
+        opinion.style.display = isOpinionVisible ? 'none' : 'block';
         opinion.style.transition = 'all 1s';
     });
 
