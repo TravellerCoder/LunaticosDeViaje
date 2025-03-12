@@ -138,4 +138,12 @@ document.querySelectorAll('.navListItems a').forEach(link => {
                 textarea.value = message;
             }
         }, 100);
-    }     
+    }  
+    
+    /*---------------Boton de whatsapp ---------------*/
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            document.getElementById("whatsapp-button").style.display = "block";
+        }, 10000); // 10000 milisegundos = 15 segundos
+    });

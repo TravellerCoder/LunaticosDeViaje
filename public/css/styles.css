@@ -786,6 +786,26 @@ footer p a {
     text-decoration: none;
 }
 
+#whatsapp-button {
+    position: fixed;
+    bottom: 90px;
+    right: 15px;
+    display: none;
+}
+
+#whatsapp-button a {
+    text-decoration: none;
+}
+
+#whatsapp-button i {
+    font-size: 35px;
+    color: white;
+    background-color: rgb(48, 226, 24);
+    border-radius: 25%;
+    padding: 10px;
+    margin-right: 25px;
+}
+
 
 @media (max-width: 998px) {
 
