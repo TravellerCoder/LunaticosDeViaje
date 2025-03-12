@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://freelads.com.ar/sitemap.xml
