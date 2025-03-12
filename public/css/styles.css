@@ -1109,5 +1109,9 @@ footer p a {
 
         .contact-rigth img {
             width: 500px;
-}
+        }
+
+        .social-media {
+            margin-bottom: 50px;
+        }
 }
