@@ -870,11 +870,16 @@ footer p a {
             border-bottom: 1px solid #ddd;
         }
 
-        .dropdown-menu {
+        #dropdown-menu {
             display: none;
             flex-direction: column;
             background-color: var(--background-color);
             position: static;
+        }
+
+        .navListItems:hover #dropdown-menu {
+            display: block;
+            transition: all 0.7 ease;
         }
     
         .navListItems:hover .dropdown-menu {
