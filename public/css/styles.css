@@ -374,7 +374,7 @@ header {
 
 .experiencias-text p {
     font-size: 1.6rem;
-    line-height: 1.5;
+    line-height: 1.2;
     margin-top: 30px;
     text-align: center;
     align-content: center;
@@ -428,12 +428,11 @@ header {
 
 .opiniones-text p {
     font-size: 1.6rem;
-    line-height: 1.5;
+    line-height: 1.2;
     margin-top: 30px;
     text-align: center;
     align-content: center;
-    max-height:100% ;
-    overflow: hidden;
+    max-height:100%;
 }
 
 .programas {
@@ -859,6 +858,10 @@ footer p a {
             left: 50%;
             max-height: 65vh;
             background-blend-mode: darken;
+        }
+
+        .experiencias-text p {
+            font-size: 1rem;
         }
 
         .programas-container {
