@@ -4,8 +4,7 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const images = document.querySelectorAll(".experiencias-item");
 const overlay = document.querySelector('.overlay');
-const spanProgram = document.querySelector('.programas-wraper');
-const spanProgramText = document.querySelector('.programas-descript');
+
 const xButton = document.querySelectorAll('x-button');
 
 let index = 0;
@@ -51,18 +50,6 @@ images.forEach(image => {
 });
 
 
-spanProgram.addEventListener('click', (event) => {
-    console.log('click');
-    console.log(spanProgramText);
-    event.stopPropagation();
-    spanProgramText.style.display = 'block';
-
-});
-
-spanProgram.addEventListener('click', (event) => {
-    event.stopPropagation();
-    spanProgramText.style.display = 'none';
-});
 
 
 
@@ -122,3 +109,32 @@ document.querySelectorAll('.navListItems a').forEach(link => {
         event.stopPropagation();
         opinion.style.display = 'none';
     });
+
+    /*----------------desplegable de programas -----------------*/
+
+    let spanProgram = document.querySelectorAll('.programas-wraper');
+    let spanProgramText = document.querySelectorAll('.programas-descript');
+
+    spanProgram.forEach((program, index ) => {
+        program.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const isVisible = spanProgramText[index].style.display === 'block';
+            spanProgramText[index].style.display = isVisible ? 'none' : 'block';;
+            spanProgramText[index].style.transition = 'all 1s';
+        
+        });
+    });
+
+    /*----------------autocompletado de msj de textarea------------*/
+
+    function setMessage(message) {
+
+        window.location.href = '#contacto';
+
+        setTimeout(() => {
+            const textarea = document.querySelector('#contacto textarea');
+            if (textarea) {
+                textarea.value = message;
+            }
+        }, 100);
+    }     

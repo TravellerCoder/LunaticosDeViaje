@@ -476,7 +476,12 @@ header {
     height: 100%;
 }
 
+.opiniones-text span {
+    font-size: 1.6rem;
+}
+
 .opiniones-text p {
+    display: block;
     font-size: 1.4rem;
     margin-top: 30px;
     text-align: center;
@@ -533,7 +538,6 @@ header {
 .programas-descript{
     display: none;
     text-align: center;
-    color: var(--senary-color);
     font-size: 1.5em;
 }
 
