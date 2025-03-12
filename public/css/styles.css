@@ -197,21 +197,21 @@ header {
 
 .hero-text{
     text-align: center;
-    font-size: 2em;
-    margin: 2rem;
-    padding: 2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
 }
 
 .hero-text h1 {
     margin: 30px;
     padding: 10px;
-    font-size: 2em;
+    font-size: 4rem;
 }
 
 .hero-text p {
-    margin: 30px;
-    padding: 30px;
+    margin: 5px 0;
+    padding: 5px;
     font-family: 'Nourd';
+    font-size: 1.5rem;
 }
 
 .hero-galery {
@@ -391,9 +391,33 @@ header {
 .viajes-personalizados h2 {
     text-align: left;
     font-size: 2.5em;
-    margin: 10px;
-    padding: 10px;    
+    margin: 2rem;
+    padding: 1rem;    
 }
+
+.viajes-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 25px;
+    padding: 10px;
+}
+
+.viajes-column,
+.viajes-text {
+    flex: 1; 
+    padding: 10px; 
+}
+
+.viajes-column img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
 
 .experiencias-download-pdf a {
     color: var(--senary-color);
@@ -828,7 +852,7 @@ footer p a {
         }
 
         .hero-text p {
-            font-size: 1.5rem;
+            font-size: 1rem;
             margin: .4rem;
             padding: .4rem;
             
@@ -859,6 +883,11 @@ footer p a {
             flex-direction: column;
         }
 
+        .experiencias-column img {
+            width: 100%;
+            max-width: 750px;
+        }
+
         .zoomed {
             transform: translate(-50%, -50%) scale(1.1);
             position: fixed;
@@ -868,6 +897,10 @@ footer p a {
             left: 50%;
             max-height: 65vh;
             background-blend-mode: darken;
+        }
+
+        .experiencias-text {
+            margin-top: 15px;
         }
 
         .experiencias-text p {
