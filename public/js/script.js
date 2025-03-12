@@ -106,3 +106,19 @@ document.querySelectorAll('.navListItems a').forEach(link => {
             }
         });
     };
+
+    /*----------------desplegable de opiniones -----------------*/
+
+    let opinion = document.querySelector('.opiniones-text-desplegable');
+    let opinionSpan = document.querySelector('.opiniones-text');
+
+    opinionSpan.addEventListener('click', (event) => {
+        event.stopPropagation();
+        opinion.style.display = 'block';
+        opinion.style.transition = 'all 1s';
+    });
+
+    opinion.addEventListener('click', (event) => {
+        event.stopPropagation();
+        opinion.style.display = 'none';
+    });
