@@ -8,6 +8,7 @@
 
 :root {
     --background-color: #fffafa;
+    --button-color: #202122;
     --primary-color: #01abee;
     --secondary-color: #05dbf2;
     --tertiary-color: #4f5902;
@@ -57,9 +58,9 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
+    background-color: var(--button-color);
     border-radius: 10px;
-    border: 3px solid var(--secondary-color);
+    border: 3px solid var(--scrollbarTrack-color);
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -95,7 +96,7 @@ header {
 }
 
 .navBar {
-    background-color: var(--quaternary-color);
+    background-color: var(--button-color);
     padding: 0;
     margin: 0 auto;
     display: flex;
@@ -141,8 +142,9 @@ header {
     list-style: none;
     padding: 10px;
     margin-top: 5px;
-    background-color: var(--quaternary-color);
-    border: none;
+    background-color: var(--button-color);
+    border: 1px solid var(--scrollbarTrack-color);
+    border-top: none;
 }
 
 
@@ -234,7 +236,7 @@ header {
 }
 
 .hero-galery button {
-    background-color: var(--secondary-color);
+    background-color: var(--button-color);
     border: none;
     padding: 15px;
     margin: 15px auto;
@@ -245,12 +247,12 @@ header {
 
 }
 
-.hero-galery button:hover {
+/*.hero-galery button:hover {
     background-color: var(--quinary-color);
     box-shadow: var(--tertiary-color);
     transition: 0.7s;
     color: var(--senary-color);
-}
+}*/
 
 
 .hero-galery button a {
@@ -361,7 +363,7 @@ header {
 
 .experiencias-download-pdf {
     margin-bottom: 15px;
-    background-color: var(--primary-color);
+    background-color: var(--button-color);
     color: white;
     width: 75%;
     margin:0 auto 25px auto;
@@ -374,12 +376,12 @@ header {
     text-decoration: none;
 }
 
-.experiencias-download-pdf:hover {
+/*.experiencias-download-pdf:hover {
     background-color: var(--secondary-color);
     box-shadow: var(--primary-color);
     transition: 0.7s;
     color: var(--senary-color);
-}
+}*/
 
 .experiencias-text p {
     font-size: 1.6rem;
@@ -548,7 +550,7 @@ header {
 } 
 
 .programas-wraper  button {
-    background-color: var(--tertiary-color);
+    background-color: var(--button-color);
     color: var(--senary-color);
     border: none;
     padding: 10px;
@@ -712,17 +714,17 @@ header {
 
 .contact-left form input,
 .contact-left form textarea {
-    border: solid 1px var(--primary-color);
+    border: solid 1px var(--button-color);
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
     width: 100%;
-    box-shadow: var(--quaternary-color);
-    background-color: var(--secondary-color);
+    box-shadow: var(--scrollbarTrack-color);
+    background-color: var(--background-color);
 }
 
 .contact-left form button {
-    background-color: var(--tertiary-color);
+    background-color: var(--button-color);
     color: var(--senary-color);
     border: none;
     padding: 10px;
