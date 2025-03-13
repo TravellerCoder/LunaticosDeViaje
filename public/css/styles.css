@@ -982,7 +982,7 @@ footer p a {
         }
 
         .experiencias h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin: 0 0.5rem;
             padding: 0.5rem;
         }
@@ -1036,8 +1036,8 @@ footer p a {
         }
 
         .viajes-personalizados h2 {
-            font-size: 2rem;
-            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            margin: 0.3rem 0.5rem;
             padding: 0.5rem;
         }
 
@@ -1067,7 +1067,10 @@ footer p a {
         }
 
         .opiniones h2{
-            align-items: center;
+            font-size: 1rem;
+            margin: 5px;
+            padding: 0;
+            text-align: left;
         }
         .opiniones-container{
             display: flex;
@@ -1103,9 +1106,25 @@ footer p a {
             max-height: 100%;
         }
 
+        .programas h2 {
+            font-size: 1.5rem;
+            margin: 0.1rem 0.1rem;
+            padding: 0.1rem;
+        }
 
         .programas-descript {
             font-size: .8rem;
+        }
+
+        .programas-text h3 {
+            font-size: 1.5rem;
+            margin: 0.1rem 0.1rem;
+            padding: 0.1rem;
+        }
+
+        .programas-wraper img {
+            width: 100%;
+            margin: 0 auto;
         }
 
         .nosotros-container {
