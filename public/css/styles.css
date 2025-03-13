@@ -669,14 +669,13 @@ header {
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .contacto h2 {
     text-align: left;
-    font-size: 2.5em;
-    margin: 2rem;
-    padding: 1rem;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 .contact-wrapper {
@@ -696,7 +695,7 @@ header {
     flex: 1;
     padding: 10px;
     max-height: 75%;
-    margin: 50px;
+    margin: 0 50px;
 }
 
 .contact-left {
@@ -764,7 +763,7 @@ footer {
 footer h2 {
     text-align: flex-start;
     margin-bottom: 30px;
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
 
 footer .social-media {
@@ -873,7 +872,12 @@ footer p a {
         height: 60%; 
         border-radius: 8px;
     }
-}
+
+    .contacto h2 {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
 
     .contact-wrapper {
         display: flex;
@@ -899,6 +903,12 @@ footer p a {
         margin: auto;
     }
 
+    footer h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        padding: 0.5rem;
+    }
+}
 
 @media (max-width: 768px) {
 
@@ -1149,6 +1159,12 @@ footer p a {
             width: 100%;
             height: 60%;
             margin: 0 auto;
+        }
+
+        .nosotros h2 {
+            font-size: 1.5rem;
+            margin: 0.1rem 0.1rem;
+            padding: 0.1rem;
         }
 
         .nosotros-container {
