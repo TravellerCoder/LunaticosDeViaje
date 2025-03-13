@@ -851,6 +851,30 @@ footer p a {
         align-items: center;
     }
 
+    .programas-wraper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        height: 80vh; /* Igualar altura */
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .programas-descript {
+        font-size: 0.9rem;
+    }
+
+    .programas-wraper img {
+        width: 100%;
+        height: 60%; 
+        border-radius: 8px;
+    }
+}
+
     .contact-wrapper {
         display: flex;
         flex-direction: column;
@@ -874,7 +898,7 @@ footer p a {
     .contact-right img {
         margin: auto;
     }
-}
+
 
 @media (max-width: 768px) {
 
@@ -1123,6 +1147,7 @@ footer p a {
 
         .programas-wraper img {
             width: 100%;
+            height: 60%;
             margin: 0 auto;
         }
 
