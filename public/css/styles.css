@@ -490,7 +490,6 @@ header {
     display: flex;
     flex-direction: column;
     padding: 20px; 
-    width: 100%;
     max-width: 100dvw;
 }
 
@@ -521,8 +520,6 @@ header {
     height: 100%; 
 }
 
-
-
 .programas-text {
     display: flex;
     flex-direction: column;
@@ -531,8 +528,8 @@ header {
 
 .programas-text h3 {
     font-size: 2rem;
-    margin: 10px;
-    padding: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 .descript{
@@ -541,6 +538,8 @@ header {
     font-size: 1rem;
     font-weight: 500;
     color: black;
+    margin: 0;
+    padding: 0;
 }
 
 .programas-button {
@@ -562,7 +561,7 @@ header {
 .programas-wraper img {
     width: 100%; /* La imagen ocupa el ancho completo del contenedor */
     height: 60%;
-    max-height: 50%;
+    max-height: 60%;
     margin-top: 15px;
     border-radius: 5px;
 }
