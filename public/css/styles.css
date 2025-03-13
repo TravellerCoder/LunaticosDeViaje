@@ -379,14 +379,6 @@ header {
     align-content: center;
 }
 
-.viajes-personalizados {
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-
 .viajes-personalizados h2 {
     text-align: left;
     font-size: 2.5em;
@@ -951,24 +943,17 @@ footer p a {
             margin-top: 60px;
         }
 
-        .hero-text { 
-            font-size: 1.5rem;
-            margin: 1rem;
-            padding: 1rem;
+        .hero-text {
+            width: 100%;
         }
 
         .hero-text h1 {
-            margin: 30px;
-            padding: 10px;
-            font-size: 2.5rem;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            padding: 0;
+            text-align: center;
         }
 
-        .hero-text p {
-            font-size: 1rem;
-            margin: .4rem;
-            padding: .4rem;
-            
-        }
 
         .hero-galery {
             display: flex;
