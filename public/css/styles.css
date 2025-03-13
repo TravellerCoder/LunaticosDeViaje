@@ -121,6 +121,9 @@ header {
     margin: 0 15px;
     padding: 15px;
     list-style-type: none;
+    color: var(--senary-color);
+    font-size: 17px;
+    font-family: 'Nourd';
 }
 
 .navListItems a {
@@ -504,7 +507,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
+    width: 100%;
 }
 
 .programas-wraper {
@@ -513,11 +516,11 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    height: 100%; 
+    height: 80%; 
 }
 
 .programas-text {
@@ -560,8 +563,8 @@ header {
 
 .programas-wraper img {
     width: 100%; /* La imagen ocupa el ancho completo del contenedor */
-    height: 60%;
-    max-height: 60%;
+    height: 70%;
+    max-height: 70%;
     margin-top: 15px;
     border-radius: 5px;
 }
@@ -674,8 +677,8 @@ header {
 .contacto h2 {
     text-align: left;
     font-size: 2.5rem;
-    margin: 0;
-    padding: 0;
+    margin: 2rem;
+    padding: 1rem;
 }
 
 .contact-wrapper {
@@ -762,8 +765,9 @@ footer {
 
 footer h2 {
     text-align: flex-start;
-    margin-bottom: 30px;
     font-size: 2.5rem;
+    margin: 2rem;
+    padding: 1rem;
 }
 
 footer .social-media {
@@ -856,7 +860,7 @@ footer p a {
         justify-content: space-between;
         align-items: center;
         padding: 15px;
-        height: 80vh; /* Igualar altura */
+        height: 80dvh; /* Igualar altura */
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -933,7 +937,7 @@ footer p a {
             position: relative;
             width: 100%;
             z-index: 1000;
-            background-color: var(--background-color);
+            background-color: var(--button-color);
         }
 
         .navList.active {
@@ -949,7 +953,7 @@ footer p a {
         #dropdown-menu {
             display: none;
             flex-direction: column;
-            background-color: var(--background-color);
+            background-color: var(--button-color);
             position: static;
         }
 
@@ -964,8 +968,8 @@ footer p a {
             background-color: var(--background-color);
         }
 
-        .navListItems a {
-            color: #333;
+        .navListItems {
+            color:var(--senary-color);
         }
 
         .hero {

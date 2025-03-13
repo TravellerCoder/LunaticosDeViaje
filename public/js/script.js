@@ -88,7 +88,10 @@ document.querySelectorAll('.navListItems a').forEach(link => {
             if (top >= offset && top < offset + height) {
                 navLinks.forEach(links => {
                     links.classList.remove('active');
-                    document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    if(id) { 
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    }
+                    
                 });
             }
         });
@@ -111,20 +114,6 @@ document.querySelectorAll('.navListItems a').forEach(link => {
         opinion.style.display = 'none';
     });
 
-    /*----------------desplegable de programas -----------------*/
-
-    let spanProgram = document.querySelectorAll('.programas-wraper');
-    let spanProgramText = document.querySelectorAll('.programas-descript');
-
-    spanProgram.forEach((program, index ) => {
-        program.addEventListener('click', (event) => {
-            event.stopPropagation();
-            const isVisible = spanProgramText[index].style.display === 'block';
-            spanProgramText[index].style.display = isVisible ? 'none' : 'block';;
-            spanProgramText[index].style.transition = 'all 1s';
-        
-        });
-    });
 
     /*----------------autocompletado de msj de textarea------------*/
 
