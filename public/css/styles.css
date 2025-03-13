@@ -249,14 +249,6 @@ header {
 
 }
 
-/*.hero-galery button:hover {
-    background-color: var(--quinary-color);
-    box-shadow: var(--tertiary-color);
-    transition: 0.7s;
-    color: var(--senary-color);
-}*/
-
-
 .hero-galery button a {
     color: var(--senary-color);
     text-decoration: none;
@@ -266,22 +258,22 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 0.5rem;
 }
 
 .experiencias h2 {
-    text-align: left;
     font-size: 2.5em;
-    margin: 2rem;
-    padding: 1rem;    
+    margin: 0.5rem 2rem;
+    padding: 0.5rem 1rem;    
 }
 
 .experiencias-container {
     display: flex;
+    justify-content: center;
     width: 100%;
     max-width: fit-content;
     margin: 25px;
-    padding: 10px;
+    padding: 1rem auto;
 }
 
 .overlay {
@@ -300,6 +292,7 @@ header {
 .experiencias-text {
     flex: 1; 
     padding: 10px;
+
 }
 
 
@@ -378,13 +371,6 @@ header {
     text-decoration: none;
 }
 
-/*.experiencias-download-pdf:hover {
-    background-color: var(--secondary-color);
-    box-shadow: var(--primary-color);
-    transition: 0.7s;
-    color: var(--senary-color);
-}*/
-
 .experiencias-text p {
     font-size: 1.6rem;
     line-height: 1.2;
@@ -393,23 +379,31 @@ header {
     align-content: center;
 }
 
+.viajes-personalizados {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
 
 .viajes-personalizados h2 {
     text-align: left;
     font-size: 2.5em;
-    margin: 2rem;
-    padding: 1rem;    
+    margin: 0.5rem 2rem;
+    padding: 0.5rem 1rem;    
 }
 
 .viajes-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 25px;
-    padding: 10px;
+    width: 90vw;
+    margin: 1rem 2rem;
+    padding: 1rem 2.5rem;
 }
 
 .viajes-column,
@@ -998,7 +992,7 @@ footer p a {
         }
 
         .experiencias {
-            width: 95vw;
+            width: 90vw;
             margin: 0 auto;
             padding: 0;
         }
@@ -1014,7 +1008,7 @@ footer p a {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 95vw;
+            width: 100%;
             max-width: 95vw;
             padding: 0;
             margin: 0.5rem 0;
@@ -1038,7 +1032,7 @@ footer p a {
         }
 
         .experiencias-text {
-            width: 90vw;
+            width: 100%;
             margin-top: 5px;
         }
 
@@ -1048,13 +1042,40 @@ footer p a {
 
         .experiencias-text p {
             
-            margin-top: 5px;
-            font-size: 1rem;
+            margin: 5px auto;
+            font-size: 0.8rem;
+        }
+
+        .viajes-personalizados{
+            width: 90vw;
+            margin: 0 auto;
+        }
+
+        .viajes-personalizados h2 {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            padding: 0.5rem;
         }
 
         .viajes-container {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .viajes-column {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .viajes-column img {
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
         }
 
         .viajes-text p {
