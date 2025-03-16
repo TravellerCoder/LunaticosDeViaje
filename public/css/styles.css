@@ -765,6 +765,32 @@ header {
     margin: auto;
     align-items: center;
 }
+
+.form-ok {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    height: 100%; 
+}
+
+.form-ok h2 {
+    font-size: 2rem;
+    margin: 0.1rem 0.1rem;
+    padding: 0.1rem;
+}
+
+.form-ok h3 {
+    font-size: 1.5rem;
+    margin: 0.1rem 0.1rem;
+    padding: 0.1rem;
+}
+
 footer {
     padding: 20px 10px;
     align-items: center;
