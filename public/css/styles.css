@@ -230,7 +230,7 @@ header {
     height: 100%;
     max-height: 50vh;
     width: 100%;
-    max-width: 55dvw;
+    max-width: 75dvw;
 }
 
 .hero-galery iframe {
@@ -249,7 +249,6 @@ header {
     font-size: 1.2rem;
     cursor: pointer;
     width: 40%;
-
 }
 
 .hero-galery button a {
@@ -528,7 +527,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    height: 80%; 
+    height: 100%; 
 }
 
 .programas-text {
@@ -570,8 +569,8 @@ header {
 }
 
 .programas-wraper img {
-    width: 100%; /* La imagen ocupa el ancho completo del contenedor */
-    height: 70%;
+    width: 90%; 
+    height: 60%;
     max-height: 70%;
     margin-top: 15px;
     border-radius: 5px;
@@ -832,11 +831,19 @@ footer p a {
 
 @media (max-width: 998px) {
 
+    .hero-galery {
+        max-width: 95vw;
+    }
+
     .experiencias-container {
         display: grid;
         grid-template-areas: 
         "experiencias-column  experiencias-galery"
         "experiencias-text  experiencias-text ";
+    }
+
+    .experiencias-download-pdf{
+        width: 50%;
     }
 
     .experiencias-text {
