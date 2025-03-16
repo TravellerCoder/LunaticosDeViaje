@@ -15,10 +15,10 @@ app.listen(port, (error) => {
 
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve(__dirname, './index.html'))
+    res.sendFile(path.resolve(__dirname, 'index.html'))
 });
 
 app.get('/confirmacion', function (req, res) {
-    res.sendFile(path.resolve(__dirname, './formSend.html'))
+    res.sendFile(path.resolve(__dirname, 'formSend.html'))
 });
 

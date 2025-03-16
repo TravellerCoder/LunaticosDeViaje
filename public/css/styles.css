@@ -382,6 +382,13 @@ header {
     align-content: center;
 }
 
+.viajes-personalizados {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
 .viajes-personalizados h2 {
     text-align: left;
     font-size: 2.5em;
@@ -398,6 +405,7 @@ header {
     text-align: center;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .viajes-column,
@@ -489,7 +497,7 @@ header {
 
 
 .programas {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px; 
