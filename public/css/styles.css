@@ -16,6 +16,7 @@
     --quinary-color: #a68953;
     --senary-color: #f2f2f2;
     --scrollbarTrack-color: #636060;
+    --error-color: #c00404;
 }
 
 @font-face {
@@ -767,7 +768,7 @@ header {
 }
 
 .form-ok {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;

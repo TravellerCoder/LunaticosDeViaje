@@ -9,6 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Lunaticos de Viaje</title>
 </head> 
+<body>
     <!--Header con barra de navegacion--> 
     <header>
         <div class="logo">
@@ -260,20 +261,21 @@
 
             <div class="contact-left">
 
-                <form method="post" action="correo.php">
+                <form id="form" method="post" action="correo.php" novalidate>
                     
                         <input type="text" id="nombre" name="nombre" required placeholder="Nombre Completo">
+                        <div class="error" id="errorNombre"></div>
+
                     
                         <input type="email" id="email" name="email" required placeholder="Email">
+                        <div class="error" id="errorEmail"></div>
                     
                         <textarea name="mensaje" id="mensaje" cols="30" rows="10" required placeholder="Escribinos aqui tu mensaje y muy pronto estaremos en contacto"></textarea>
-                    <button>Enviar</button>-
-                </form>
+                        <div class="error" id="errorMensaje"></div>
 
-                <div class="form-ok">
-                    <h2> Gracias por tu mensaje! </h2>
-                    <h3>Muy pronto estaremos en contacto!</h3>
-                </div> 
+                        <button>Enviar</button>-
+                </form>
+ 
             </div>
 
             <div class="contact-right">
@@ -283,6 +285,11 @@
         </div>
         
         <img src="./images/Web/Finalweb.png" alt="">
+        
+        <div class="form-ok">
+            <h2> Gracias por tu mensaje! </h2>
+            <h3>Muy pronto estaremos en contacto!</h3>
+        </div>
     </div> 
 
 </section>

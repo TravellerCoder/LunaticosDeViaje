@@ -127,7 +127,91 @@ document.querySelectorAll('.navListItems a').forEach(link => {
                 textarea.value = message;
             }
         }, 100);
-    }  
+    } 
+    
+    /*------------------Manejo del formulario-----------------*/
+
+    const showError = (element, msj) => {  
+        element.textContent = msj;
+        element.style.display = 'block';
+        console.log('click');
+        
+    
+        const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+        inputs.forEach(input => {
+            input.style.boxShadow = '0 0 1rem var(--error-color)';
+            input.addEventListener('focus', () => {
+                unshowError(element);
+                input.style.boxShadow = '0 0 1rem var(--scrollbarTrack-color)';
+        });
+        });
+    }
+    const unshowError = (element, msj) => { 
+        element.textContent = '';
+        element.style.display = 'none';
+    
+        const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+        inputs.forEach(input => {
+            input.style.boxShadow = 'none';
+        });
+    }
+
+    const formSendCart = document.querySelector('.form-ok');
+
+    const submitFunction = (event) => {
+        console.log('click');
+        if(!validationForm()) {
+            event.preventDefault();
+            return(
+                formSendCart.style.display = 'block',
+                formSendCart.style.transition = 'all 1s',
+                formSendCart.style.opacity = 1,
+                formSendCart.style.zIndex = 1500,
+                formSendCart.style.position = 'fixed'
+            )}
+    }
+    
+    document.getElementById('form').addEventListener('submit', submitFunction) 
+    
+    function validationForm(){
+        const textAreas = document.querySelectorAll('input[type="text"]');
+        let correctValidation = true;
+    
+        textAreas.forEach(area => {
+            let errorArea = document.getElementById('error' + area.id.charAt(0).toUpperCase() + area.id.slice(1)) 
+            if (area.value.length == ''){
+                showError(errorArea, 'Este campo es obligatorio')
+                correctValidation = false
+            }else if(area.value.length < 3){
+                showError(errorArea, 'Este campo debe tener al menos 3 caracteres')
+                correctValidation = false
+            } else {
+                unshowError(errorArea)
+            }
+        });
+    
+        const email = document.getElementById('email');
+        let errorEmail = document.getElementById('errorEmail');
+    
+        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ 
+            unshowError(errorEmail)
+        } else {
+            showError(errorEmail, 'Debes ingresar un formato de mail valido')
+        }
+
+        const msjArea = document.getElementById('mensaje');
+        let errorMsj = document.getElementById('errorMensaje');
+
+        if(msjArea.value.length ==''){
+            showError(errorMsj, 'Contanos porque te queres contactar con Lunaticos de viaje!' )
+            correctValidation = false;      
+        } else {
+            unshowError(errorMsj)
+        }
+
+        return correctValidation;
+    }
+
     
     /*---------------Boton de whatsapp ---------------*/
 
@@ -135,4 +219,4 @@ document.querySelectorAll('.navListItems a').forEach(link => {
         setTimeout(function() {
             document.getElementById("whatsapp-button").style.display = "block";
         }, 10000); // 10000 milisegundos = 15 segundos
-    });
+    })
