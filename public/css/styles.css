@@ -503,6 +503,7 @@ header {
     flex-direction: column;
     padding: 20px; 
     max-width: 100dvw;
+    background-color: rgba(227, 248, 130, 0.897);
 }
 
 .programas h2 {
