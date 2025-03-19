@@ -317,10 +317,9 @@ header {
 
 .experiencias-item {
     width: 100%;
-    /*max-width: 400px;*/
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(177, 167, 167, 0.1);
     object-fit: cover;
     cursor: pointer;
