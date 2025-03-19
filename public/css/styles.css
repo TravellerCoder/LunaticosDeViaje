@@ -250,6 +250,7 @@ header {
     font-size: 1.2rem;
     cursor: pointer;
     width: 40%;
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
 }
 
 .hero-galery button a {
@@ -365,17 +366,18 @@ header {
     color: white;
     width: 75%;
     margin:0 auto 25px auto;
-    padding: 10px 20px;
+    padding: 15px 25px;
     font-size: 16px;    
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
 }
 
 .experiencias-text p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 1.2;
     margin-top: 30px;
     text-align: center;
@@ -437,7 +439,7 @@ header {
 .opiniones {
     width: 100%;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .opiniones h2 {
@@ -556,6 +558,7 @@ header {
 .programas-button {
     background-color: var(--button-color);
     color: var(--senary-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
     border: none;
     padding: 10px;
     margin: 15px auto;
@@ -714,9 +717,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    max-height: 75%;
-    margin: 50px;
 }
 
 .contact-left form {
@@ -731,7 +731,6 @@ header {
 
 .contact-left form input,
 .contact-left form textarea {
-    border: solid 1px var(--button-color);
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
@@ -740,12 +739,20 @@ header {
     background-color: var(--background-color);
 }
 
-.contact-left form button {
+.contact-left form input:focus,
+.contact-left form textarea:focus {
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
+}
+
+#submit {
     background-color: var(--button-color);
     color: var(--senary-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
+    align-items: center;
     border: none;
+    cursor: pointer;
     padding: 10px;
-    margin: 10px;
+    margin: 10px auto;
     border-radius: 5px;
     font-size: 1em;
     width: 65%;
@@ -754,17 +761,75 @@ header {
 .contact-right img {
     width: 80%;
     max-width: 80%;
-    max-height: 100%;
-    display: flex;
-    align-content: center;
+    margin: 50px;
+    align-items: center;
 }
 
-.contacto img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    margin: auto;
+.contact-wrapper-final {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: fit-content;
+    max-height: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.contact-left-final,
+.contact-right-final {
+    flex: 1;
+    padding: 10px;
+    max-height: 75%;
+    margin: 0 50px;
+}
+
+.contact-left-final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.contact-left-final img {
+    width: 90%;
+    max-width: 90%;
+    margin: 50px auto;
+    align-items: center;
+}
+
+.contact-right-final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.contact-right-final button{
+    align-items: center;
+    background-color: var(--button-color);
+    border: none;
+    padding: 15px;
+    margin: 50px auto;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 70%;
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
+} 
+
+.contact-right-final button a{
+    color: var(--senary-color);
+    text-decoration: none;
 }
 
 .error{
@@ -800,13 +865,14 @@ header {
     padding: 0.1rem;
 }
 
+
 footer {
     padding: 20px 10px;
-    align-items: center;
+    align-items: center-;
 }
 
 footer h2 {
-    text-align: flex-start;
+    text-align: center;
     font-size: 2.5rem;
     margin: 2rem;
     padding: 1rem;
@@ -848,7 +914,18 @@ footer p a {
     bottom: 90px;
     right: 15px;
     display: none;
+    justify-content: center;
 }
+
+#whatsapp-button p{
+    font-size: 1rem;
+    color:var(--button-color);
+    background-color: var(--background-color);
+    border-radius: 25%;
+    padding: 10px;
+    margin-right: 25px;
+}
+
 
 #whatsapp-button a {
     text-decoration: none;
@@ -960,8 +1037,24 @@ footer p a {
         margin: auto;
     }
 
-    .contact-right img {
+    .contact-right {
+        width: 100%;
         margin: auto;
+    }
+
+    .contact-right img {
+        text-align: center;
+    }
+
+    .contact-wrapper-final {
+        display: flex; 
+        flex-direction: column;
+        width: 90%;
+        max-width: fit-content;
+        max-height: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
 
     footer h2 {
@@ -1203,7 +1296,7 @@ footer p a {
         }
 
         .programas h2 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin: 0.1rem 0.1rem;
             padding: 0.1rem;
         }

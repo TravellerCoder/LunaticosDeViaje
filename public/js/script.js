@@ -79,7 +79,7 @@ document.querySelectorAll('.navListItems a').forEach(link => {
     window.onscroll = () => {
         sections.forEach(sec => {
             let top = window.scrollY;
-            let offset = sec.offsetTop - 120;
+            let offset = sec.offsetTop - 150;
             let height = sec.offsetHeight;
             let id = sec.getAttribute('id');
     
@@ -152,27 +152,10 @@ document.querySelectorAll('.navListItems a').forEach(link => {
     
         const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
         inputs.forEach(input => {
-            input.style.boxShadow = 'none';
+            input.style.boxShadow = '0 0 1rem var(--scrollbarTrack-color)';
         });
     }
 
-    const formSendCart = document.querySelector('.form-ok');
-
-    const submitFunction = (event) => {
-        console.log('click');
-        if(!validationForm()) {
-            event.preventDefault();
-            return(
-                formSendCart.style.display = 'block',
-                formSendCart.style.transition = 'all 1s',
-                formSendCart.style.opacity = 1,
-                formSendCart.style.zIndex = 1500,
-                formSendCart.style.position = 'fixed'
-            )}
-    }
-    
-    document.getElementById('form').addEventListener('submit', submitFunction) 
-    
     function validationForm(){
         const textAreas = document.querySelectorAll('input[type="text"]');
         let correctValidation = true;
@@ -197,6 +180,7 @@ document.querySelectorAll('.navListItems a').forEach(link => {
             unshowError(errorEmail)
         } else {
             showError(errorEmail, 'Debes ingresar un formato de mail valido')
+            correctValidation = false;
         }
 
         const msjArea = document.getElementById('mensaje');
@@ -212,6 +196,28 @@ document.querySelectorAll('.navListItems a').forEach(link => {
         return correctValidation;
     }
 
+    
+    const formSendCart = document.querySelector('.form-ok');
+
+    const submitFunction = (event) => {
+        console.log('click');
+        if(!validationForm()) {
+            event.preventDefault();
+            formSendCart.style.display = 'block',
+            formSendCart.style.transition = 'all 1s',
+            formSendCart.style.opacity = 1,
+            formSendCart.style.zIndex = 1500,
+            formSendCart.style.position = 'fixed'
+            return;
+        }
+
+        let recaptchaResponse = grecaptcha.getResponse();
+        if (recaptchaResponse.length === 0) {
+            alert("Por favor completa el reCAPTCHA");
+            return;
+        }
+        document.getElementById("form").submit();
+    }
     
     /*---------------Boton de whatsapp ---------------*/
 
