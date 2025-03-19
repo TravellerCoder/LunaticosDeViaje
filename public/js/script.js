@@ -180,7 +180,7 @@ document.querySelectorAll('.navListItems a').forEach(link => {
         textAreas.forEach(area => {
             let errorArea = document.getElementById('error' + area.id.charAt(0).toUpperCase() + area.id.slice(1)) 
             if (area.value.length == ''){
-                showError(errorArea, 'Este campo es obligatorio')
+                showError(errorArea, 'Decinos cual es tu nombre!')
                 correctValidation = false
             }else if(area.value.length < 3){
                 showError(errorArea, 'Este campo debe tener al menos 3 caracteres')
