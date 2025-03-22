@@ -97,21 +97,46 @@ document.querySelectorAll('.navListItems a').forEach(link => {
         });
     };
 
-    /*----------------desplegable de opiniones -----------------*/
+     /*----------------carrousel de opiniones -----------------*/
 
-    let opinion = document.querySelector('.opiniones-text-desplegable');
-    let opinionSpan = document.querySelector('.opiniones-text');
+     function initializeCarousel() {
+        const carousels = document.querySelectorAll('.opiniones-carrousel');
+        carousels.forEach(carousel => {
+            const images = carousel.querySelectorAll('img');
+            const prevBtn = carousel.parentElement.querySelector('.prevBtn');
+            const nextBtn = carousel.parentElement.querySelector('.nextBtn');
 
-    opinionSpan.addEventListener('click', (event) => {
-        event.stopPropagation();
-        const isOpinionVisible = opinion.style.display === 'block';
-        opinion.style.display = isOpinionVisible ? 'none' : 'block';
-        opinion.style.transition = 'all 1s';
-    });
+            if(!carousel || images.length === 0 || !prevBtn || !nextBtn) {
+                carousel.style.transition = 'transform 0.5s ease-in-out';
+                return;
+            }
 
-    opinion.addEventListener('click', (event) => {
-        event.stopPropagation();
-        opinion.style.display = 'none';
+            let currentIndex = 0;
+            const totalImages = images.length;
+
+            function showSlide(newIndex) {  
+                if (newIndex < 0) {
+                    currentIndex = totalImages - 1;
+                } else if (newIndex >= totalImages) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = newIndex;
+                }
+
+                carousel.style.transition = 'transform 0.5s ease-in-out';
+                carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
+            }
+
+            prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+            console.log('click');
+            
+            nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+        })
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeCarousel();
     });
 
 
