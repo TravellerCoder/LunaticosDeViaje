@@ -1059,20 +1059,12 @@ footer p a {
     right: 15px;
     display: none;
     justify-content: center;
+    flex-direction: column;
 }
-
-#whatsapp-button p{
-    font-size: 1rem;
-    color:var(--button-color);
-    background-color: var(--background-color);
-    border-radius: 25%;
-    padding: 10px;
-    margin-right: 25px;
-}
-
 
 #whatsapp-button a {
     text-decoration: none;
+    color: white;
 }
 
 #whatsapp-button i {
@@ -1083,7 +1075,6 @@ footer p a {
     padding: 10px;
     margin-right: 25px;
 }
-
 
 @media (max-width: 998px) {
 
