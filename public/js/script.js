@@ -159,8 +159,6 @@ document.querySelectorAll('.navListItems a').forEach(link => {
     const showError = (element, msj) => {  
         element.textContent = msj;
         element.style.display = 'block';
-        console.log('click');
-        
     
         const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
         inputs.forEach(input => {
@@ -168,10 +166,11 @@ document.querySelectorAll('.navListItems a').forEach(link => {
             input.addEventListener('focus', () => {
                 unshowError(element);
                 input.style.boxShadow = '0 0 1rem var(--scrollbarTrack-color)';
-        });
+            });
         });
     }
-    const unshowError = (element, msj) => { 
+    
+    const unshowError = (element) => { 
         element.textContent = '';
         element.style.display = 'none';
     
@@ -180,69 +179,107 @@ document.querySelectorAll('.navListItems a').forEach(link => {
             input.style.boxShadow = '0 0 1rem var(--scrollbarTrack-color)';
         });
     }
-
-    function validationForm(){
+    
+    function validationForm() {
         const textAreas = document.querySelectorAll('input[type="text"]');
         let correctValidation = true;
     
         textAreas.forEach(area => {
-            let errorArea = document.getElementById('error' + area.id.charAt(0).toUpperCase() + area.id.slice(1)) 
-            if (area.value.length == ''){
-                showError(errorArea, 'Decinos cual es tu nombre!')
-                correctValidation = false
-            }else if(area.value.length < 3){
-                showError(errorArea, 'Este campo debe tener al menos 3 caracteres')
-                correctValidation = false
+            let errorArea = document.getElementById('error' + area.id.charAt(0).toUpperCase() + area.id.slice(1));
+            
+            if (area.value.length === 0) {
+                showError(errorArea, 'Decinos cual es tu nombre!');
+                correctValidation = false;
+            } else if (area.value.length < 3) {
+                showError(errorArea, 'Este campo debe tener al menos 3 caracteres');
+                correctValidation = false;
             } else {
-                unshowError(errorArea)
+                unshowError(errorArea);
             }
         });
     
         const email = document.getElementById('email');
         let errorEmail = document.getElementById('errorEmail');
     
-        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ 
-            unshowError(errorEmail)
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { 
+            unshowError(errorEmail);
         } else {
-            showError(errorEmail, 'Debes ingresar un formato de mail valido')
+            showError(errorEmail, 'Debes ingresar un formato de mail valido');
             correctValidation = false;
         }
-
+    
         const msjArea = document.getElementById('mensaje');
         let errorMsj = document.getElementById('errorMensaje');
-
-        if(msjArea.value.length ==''){
-            showError(errorMsj, 'Contanos porque te queres contactar con Lunaticos de viaje!' )
-            correctValidation = false;      
-        } else {
-            unshowError(errorMsj)
-        }
-
-        return correctValidation;
-    }
-
     
-    const formSendCart = document.querySelector('.form-ok');
-
-    const submitFunction = (event) => {
-        console.log('click');
-        if(!validationForm()) {
-            event.preventDefault();
-            formSendCart.style.display = 'block',
-            formSendCart.style.transition = 'all 1s',
-            formSendCart.style.opacity = 1,
-            formSendCart.style.zIndex = 1500,
-            formSendCart.style.position = 'fixed'
-            return;
+        if (msjArea.value.length === 0) {
+            showError(errorMsj, 'Contanos porque te queres contactar con Lunaticos de viaje!');
+            correctValidation = false;
+        } else {
+            unshowError(errorMsj);
         }
-
+    
+        // ✅ Verificamos el reCAPTCHA
         let recaptchaResponse = grecaptcha.getResponse();
         if (recaptchaResponse.length === 0) {
             alert("Por favor completa el reCAPTCHA");
+            correctValidation = false;
+        }
+    
+        return correctValidation;
+    }
+    
+    const form = document.getElementById("form");
+    const formSendCart = document.querySelector('.form-ok');
+    
+    const submitFunction = async (event) => {
+        event.preventDefault(); // ❌ Evita que se recargue la página
+    
+        if (!validationForm()) {
+            // ✅ Mostrar el cartel si hay errores en el formulario
+            formSendCart.innerHTML = '❌ Error al validar el formulario. Revisa los campos.';
+            formSendCart.style.display = 'block';
+            formSendCart.style.opacity = 1;
+            formSendCart.style.zIndex = 1500;
+            formSendCart.style.position = 'fixed';
             return;
         }
-        document.getElementById("form").submit();
+    
+        // ✅ Si todo está OK, enviamos el formulario usando `fetch`
+        const formData = new FormData(form);
+    
+        try {
+            const response = await fetch('correo.php', {
+                method: 'POST',
+                body: formData
+            });
+    
+            const result = await response.text();
+    
+            if (result === 'success') {
+                console.log('formulario enviado con exito')
+                // ✅ Mostrar cartel de éxito
+                formSendCart.innerHTML = '✅ ¡Formulario enviado con éxito! Muy pronto nos contactaremos contigo.';
+                formSendCart.style.display = 'block';
+                formSendCart.style.opacity = 1;
+                formSendCart.style.zIndex = 1500;
+                formSendCart.style.position = 'fixed';
+    
+                // 🔥 Redirigir después de 3 segundos (opcional)
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 6000);
+            } else if (result === 'error_captcha') {
+                alert('❌ Error en el reCAPTCHA. Inténtalo de nuevo.');
+            } else {
+                alert('❌ Error al enviar el formulario. Inténtalo más tarde.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('❌ Error al enviar el formulario.');
+        }
     }
+    
+    form.addEventListener('submit', submitFunction);
     
     /*---------------Boton de whatsapp ---------------*/
 
