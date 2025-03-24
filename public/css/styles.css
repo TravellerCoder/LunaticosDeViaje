@@ -1564,6 +1564,23 @@ footer p a {
             width: 500px;
         }
 
+        .form-ok {
+            height: 50%;
+            width: 70%;
+        }
+
+        .form-ok h2 {
+            font-size: 2rem;
+            margin: 0.5rem 0.1rem;
+            padding: 0.1rem;
+            text-align: center;
+        }
+
+        .form-ok h3 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0.1rem;
+            padding: 0.1rem;
+        }
         .social-media {
             margin-bottom: 50px;
         }
