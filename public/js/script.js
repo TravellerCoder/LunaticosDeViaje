@@ -156,7 +156,7 @@ document.querySelectorAll('.navListItems a').forEach(link => {
     
     /*------------------Manejo del formulario-----------------*/
 
-    const showError = (element, msj) => {  
+const showError = (element, msj) => {  
         element.textContent = msj;
         element.style.display = 'block';
     
@@ -230,19 +230,18 @@ document.querySelectorAll('.navListItems a').forEach(link => {
     
     const form = document.getElementById("form");
     const formSendCart = document.querySelector('.form-ok');
+    const body = document.querySelector('body');
+
+    const toggleBodyDark = (isDark) => {
+        if (isDark) {
+            body.classList.add('body-dark');
+        } else {
+            body.classList.remove('body-dark');
+        }
+    };
     
     const submitFunction = async (event) => {
         event.preventDefault(); // ❌ Evita que se recargue la página
-    
-        if (!validationForm()) {
-            // ✅ Mostrar el cartel si hay errores en el formulario
-            formSendCart.innerHTML = '❌ Error al validar el formulario. Revisa los campos.';
-            formSendCart.style.display = 'block';
-            formSendCart.style.opacity = 1;
-            formSendCart.style.zIndex = 1500;
-            formSendCart.style.position = 'fixed';
-            return;
-        }
     
         // ✅ Si todo está OK, enviamos el formulario usando `fetch`
         const formData = new FormData(form);
@@ -257,12 +256,7 @@ document.querySelectorAll('.navListItems a').forEach(link => {
     
             if (result === 'success') {
                 console.log('formulario enviado con exito')
-                // ✅ Mostrar cartel de éxito
-                formSendCart.innerHTML = '✅ ¡Formulario enviado con éxito! Muy pronto nos contactaremos contigo.';
                 formSendCart.style.display = 'block';
-                formSendCart.style.opacity = 1;
-                formSendCart.style.zIndex = 1500;
-                formSendCart.style.position = 'fixed';
     
                 // 🔥 Redirigir después de 3 segundos (opcional)
                 setTimeout(() => {
@@ -286,5 +280,5 @@ document.querySelectorAll('.navListItems a').forEach(link => {
     document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             document.getElementById("whatsapp-button").style.display = "block";
-        }, 10000); // 10000 milisegundos = 15 segundos
+        }, 10000); // 10000 milisegundos = 10 segundos
     })
